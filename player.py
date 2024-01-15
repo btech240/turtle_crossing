@@ -18,3 +18,6 @@ class Player(Turtle):
         # Make turtle move up by 10 units
         new_y = self.ycor() + MOVE_DISTANCE
         self.goto(self.xcor(), new_y)
+
+    def new_level(self):
+        self.goto(STARTING_POSITION)
