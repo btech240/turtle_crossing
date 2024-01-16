@@ -28,6 +28,11 @@ while game_is_on:
     car_manager.create_car()
     car_manager.move_cars()
 
+    # Detect collisions with cars
+    for car in car_manager.all_cars:
+        if car.distance(player) < 20:
+            game_is_on = False
+
     if player.ycor() > 280:
         score.new_level()
         time.sleep(1)
