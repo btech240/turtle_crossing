@@ -32,11 +32,13 @@ while game_is_on:
     for car in car_manager.all_cars:
         if car.distance(player) < 20:
             game_is_on = False
+            score.gameover()
 
     if player.ycor() > 280:
         score.new_level()
         time.sleep(1)
         player.new_level()
+        car_manager.level_up()
 
 
 # Prevent exit until click
